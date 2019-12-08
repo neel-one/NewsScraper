@@ -1,7 +1,13 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-
+"""
+NewsScraper is a library that supports article and title scraping for multiple news sites. Although most parts of scraping
+news articles and titles are the same, each site has different methods. Therefore, to add support, simply add another class
+that extends the base class and override the NotImplemented methods in the abstract base class.
+TODO: implement errorr handling, add support for more sites, find away to bypass IP blocks when scraping too many articles,
+'&amp -> &'
+"""
 class Scraper(object):
     def __init__(self, limit = 60, page = 1):
         self.limit = limit
